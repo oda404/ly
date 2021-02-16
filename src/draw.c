@@ -284,6 +284,24 @@ void draw_f_commands()
 		tb_blit(strlen(lang.f1) + 1, 0, strlen(lang.f2), 1, f2);
 		free(f2);
 	}
+
+	struct tb_cell *f3 = str_cell(lang.f3);
+
+	if(dgn_catch())
+	{
+		dgn_reset();
+	}
+	else
+	{
+		tb_blit(
+			strlen(lang.f1) + strlen(lang.f2) + 2, 
+			0, 
+			strlen(lang.f3), 
+			1, 
+			f3
+		);
+		free(f3);
+	}
 }
 
 void draw_lock_state(struct term_buf* buf)

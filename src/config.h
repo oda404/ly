@@ -49,6 +49,7 @@ struct lang
 	char* err_xsessions_open;
 	char* f1;
 	char* f2;
+	char *f3;
 	char* login;
 	char* logout;
 	char* numlock;

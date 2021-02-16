@@ -113,6 +113,7 @@ void lang_load()
 		{"err_xsessions_open", &lang.err_xsessions_open, lang_handle},
 		{"f1", &lang.f1, lang_handle},
 		{"f2", &lang.f2, lang_handle},
+		{"f3", &lang.f3, lang_handle},
 		{"login", &lang.login, lang_handle},
 		{"logout", &lang.logout, lang_handle},
 		{"numlock", &lang.numlock, lang_handle},
@@ -248,8 +249,9 @@ void lang_defaults()
 	lang.err_user_uid = strdup("failed to set user UID");
 	lang.err_xsessions_dir = strdup("failed to find sessions folder");
 	lang.err_xsessions_open = strdup("failed to open sessions folder");
-	lang.f1 = strdup("F1 shutdown");
-	lang.f2 = strdup("F2 reboot");
+	lang.f1 = strdup("F1 shutdown |");
+	lang.f2 = strdup("F2 reboot |");
+	lang.f3 = strdup("F3 Shoot flame up bum ye?");
 	lang.login = strdup("login:");
 	lang.logout = strdup("logged out");
 	lang.numlock = strdup("numlock");
@@ -338,6 +340,7 @@ void lang_free()
 	free(lang.err_xsessions_open);
 	free(lang.f1);
 	free(lang.f2);
+	free(lang.f3);
 	free(lang.login);
 	free(lang.logout);
 	free(lang.numlock);
