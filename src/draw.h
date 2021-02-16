@@ -57,6 +57,7 @@ void position_input(
 	struct text* password);
 
 void animate_init(struct term_buf* buf);
+void animate_free(struct term_buf *buf);
 void animate(struct term_buf* buf);
 bool cascade(struct term_buf* buf, u8* fails);
 

@@ -213,6 +213,23 @@ int main(int argc, char** argv)
 				reboot = true;
 				run = false;
 				break;
+			case TB_KEY_F3:
+				config.animate = !config.animate;
+				if(config.animate)
+				{
+					animate_init(&buf);
+
+					if (dgn_catch())
+					{
+						config.animate = false;
+						dgn_reset();
+					}
+				}
+				else
+				{
+					animate_free(&buf);
+				}
+				break;
 			case TB_KEY_CTRL_C:
 				run = false;
 				break;

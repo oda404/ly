@@ -509,6 +509,27 @@ void animate_init(struct term_buf* buf)
 	}
 }
 
+static void doom_free(struct term_buf *buf)
+{
+	buf->init_width = 0;
+	buf->init_height = 0;
+	free(buf->tmp_buf);
+}
+
+void animate_free(struct term_buf *buf)
+{
+	/* only free if animate is off */
+	if(!config.animate)
+	{
+		switch(config.animation)
+		{
+			default:
+				doom_free(buf);
+				break;
+		}
+	}
+}
+
 static void doom(struct term_buf* term_buf)
 {
 	static struct tb_cell fire[DOOM_STEPS] =
